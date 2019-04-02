@@ -1,0 +1,11 @@
+{ -|
+Module	    :   prim.hs
+Description :   Takes a list of 3-tuples (a graph) and uses Prim's Algorithm to
+	    	sort it into an MST.
+Copyright   :   N/A
+License	    :	N/A
+
+Maintainer  :   kendgast@ut.utm.edu
+Stability   :   experimental
+Portability :	portalbe
+-}

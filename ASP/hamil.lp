@@ -1,0 +1,26 @@
+%Hamiltonian path
+node(d;p;n;s;m).
+
+%Graph edges
+edge(s, n).
+edge(d,(m;p;s)).
+edge(m, (s;n;p)).
+edge(p, n).
+
+%Edges undirected
+edge(X,Y) :- edge(Y,X).
+
+%All edges have incoming/outgoing edges
+1{cycle(X,Y) : edge(X,Y)}1 :- node(X).
+1{cycle(X,Y) : edge(X,Y)}1 :- node(Y).
+
+%Node is reachable if adjacent to start node
+reachable(Y) :- cycle(start, Y).
+
+%Node reachable if near other reachable node
+reachable(Y) :- cycle(X,Y), reachable(X).
+
+%Exclude unreachable points
+:- node(X), not reachable(X).
+
+#show cycle/2.

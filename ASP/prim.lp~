@@ -1,0 +1,43 @@
+%%%Problem Instance
+% Nodes in a graph
+node(a). node(b). node(c). node(d). node(e). node(f). node(g). node(h). node(i).
+
+%Edges connecting the nodes
+edge(a, h, 10).
+edge(a, b, 4).
+edge(b, h, 11).
+edge(b, c, 8).
+edge(c, i, 2).
+edge(c, d, 7).
+edge(c, f, 4).
+edge(d, e, 9).
+edge(d, f, 14).
+edge(e, f, 10).
+edge(f, g, 2).
+edge(g, h, 1).
+edge(g, i, 6).
+edge(h, i, 7).
+
+%Total graph weight: 95
+%Total weight of MST: 37
+
+%%%Problem Encoding
+%Edges are not symmetric
+edge(X, Y, W) :-  edge(Y, X, W).
+
+%Tree containing all nodes and edges
+1{tree(X, Y, W) : edge(X, Y, W)}1 :- node(X).
+1{tree(X, Y, W) : edge(X, Y, W)}1 :- node(Y).
+
+%Reachable points defined
+reachable(Y) :- tree(start, Y, W).
+reachable(Y) :- tree(X, Y, W), reachable(X).
+:- node(X), not reachable(X).
+
+%Number of edges in MST = Number of nodes - 1
+ecount(N) :- #count{X : node(X)} = N + 1.
+:- ncount(N), #count{X, Y, W : tree(X, Y, W)} >= N.
+
+#minimize{W, X, Y : tree(X, Y, W)}.
+#show tree/3.
+#show ecount/1.

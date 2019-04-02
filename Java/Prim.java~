@@ -1,0 +1,20 @@
+/**
+ * Takes in a file, stores it in the Graph class, and then finds and returns 
+ * the MST of the graph given to it.
+ *
+ * @author Kenneth Devon Gaston
+ * @since 2017-03-27
+ */
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+public class Java{
+    public static void main(String args[]){
+	Graph blah = new Graph();
+	blah.readGraph(args);
+    }
+    
+}

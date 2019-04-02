@@ -1,0 +1,19 @@
+#Name: Kenneth Devon Gaston
+#Date: 4/21/17
+#Name: Makefile
+#Purpose: Makefile for the prim program
+
+#Compiler version
+CC = gcc
+
+#Target
+TARGET = prim
+
+#Flags
+Cflags = -c -Wall
+
+all: $(TARGET)
+
+$(TARGET): main.o graph.o
+	$(CC) main.o graph.o -o $(TARGET)
+

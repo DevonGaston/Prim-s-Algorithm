@@ -1,0 +1,17 @@
+#ifndef GRAPH_H
+#define GRAPH_H
+
+#define STRING_SIZE 50
+#define MATRIX 100
+#define MAX_VALUE 99999999
+
+int minKey(int key[], bool visited[]);
+void printMST(int parent[], int n, int graph[MATRIX][MATRIX]);
+void prim(int graph[MATRIX][MATRIX]);
+void readGraph(char* file[]);
+
+
+
+
+
+#endif

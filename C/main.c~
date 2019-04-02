@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include "graph.h"
+
+
+int main(int args, char *argv[]){
+  char const* fileName = argv[1];
+  readGraph(fileName);
+  
+  return 0;
+}

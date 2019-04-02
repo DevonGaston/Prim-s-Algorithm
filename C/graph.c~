@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include "graph.h"
+
+int minKey(int key[], bool visited[]){
+
+
+  return 0;
+}
+void printMST(int parent[], int n, int graph[100][100]){
+
+}
+
+
+void prim(int graph[100][100]){
+
+}
+
+void readGraph(char* file){
+  FILE * fp;
+  char node_1[50], node_2[50], weight[50];
+  int weight_num,  r;
+  fp = fopen(file, "r");
+  if(fp == NULL){
+    printf("ERROR: FILE NOT FOUND!\n");
+    exit(1);
+  }
+  while((r = fscanf(fp, "%s, %s, %s\n", node_1, node_2, weight)) != EOF){
+    weight_num = atoi(weight);
+    printf("%s, %s, %d\n", node_1, node_2, weight_num);
+  }
+  fclose(fp);
+  
+}
